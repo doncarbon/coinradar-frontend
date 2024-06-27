@@ -8,7 +8,7 @@ function App() {
   const [searchResult, setSearchResult] = useState(null);
 
   useEffect(() => {
-	axios.get('https://your-backend-url.herokuapp.com/api/top10')
+	axios.get('https://coinradar-backend-ea7705370bfc.herokuapp.com/api/top10')
 	  .then(response => {
 		setTop10(response.data.top10);
 	  })
@@ -19,7 +19,7 @@ function App() {
 
   const handleSearch = (event) => {
 	event.preventDefault();
-	axios.get(`https://your-backend-url.herokuapp.com/api/search?query=${search}`)
+	axios.get(`https://coinradar-backend-ea7705370bfc.herokuapp.com/api/search?query=${search}`)
 	  .then(response => {
 		setSearchResult(response.data);
 	  })
