@@ -1,22 +1,29 @@
+// Import necessary modules from React and axios
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './App.css';
 
+// Define the main App component
 function App() {
+  // Define state variables for top 10 cryptocurrencies, search input, and search result
   const [top10, setTop10] = useState([]);
   const [search, setSearch] = useState('');
   const [searchResult, setSearchResult] = useState(null);
 
+  // Fetch the top 10 cryptocurrencies when the component mounts
   useEffect(() => {
 	axios.get('https://coinradar-backend-ea7705370bfc.herokuapp.com/api/top10')
 	  .then(response => {
+		// Update the state with the fetched data
 		setTop10(response.data.top10);
 	  })
 	  .catch(error => {
+		// Log any errors that occur during the fetch
 		console.error('Error fetching the top 10 cryptocurrencies', error);
 	  });
   }, []);
 
+  // Handle the search form submission
   const handleSearch = (event) => {
 	event.preventDefault();
 	axios.get(`https://coinradar-backend-ea7705370bfc.herokuapp.com/api/search?query=${search}`)
@@ -69,4 +76,5 @@ function App() {
   );
 }
 
+// Export the App component as the default export
 export default App;

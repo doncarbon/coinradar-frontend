@@ -1,22 +1,27 @@
+/* Style for the main App component */
 .App {
 	text-align: center;
 }
 
+/* Style for the App header */
 .App-header {
 	background-color: #282c34;
 	padding: 20px;
 	color: white;
 }
 
+/* Style for the form inside the App header */
 .App-header form {
 	margin: 20px 0;
 }
 
+/* Style for the input inside the App header */
 .App-header input {
 	padding: 10px;
 	margin-right: 10px;
 }
 
+/* Style for the search result container */
 .search-result {
 	background-color: #000000;
 	padding: 20px;
@@ -24,15 +29,18 @@
 	border-radius: 10px;
 }
 
+/* Style for the main content area */
 main {
 	padding: 20px;
 }
 
+/* Style for unordered lists */
 ul {
 	list-style-type: none;
 	padding: 0;
 }
 
+/* Style for list items */
 li {
 	background-color: #f1f1f1;
 	margin: 10px 0;
